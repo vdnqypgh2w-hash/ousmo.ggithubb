@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulaire de candidature Minecraft</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Candidature Minecraft</h1>
+      <p>Remplis le formulaire pour envoyer ta candidature.</p>
+    </header>
+
+    <section class="share-zone">
+      <p>Partage ce site avec tes amis :</p>
+      <div class="share-row">
+        <input id="shareLink" type="text" readonly value="" aria-label="Lien partageable" />
+        <button id="copyLink">Copier le lien</button>
+      </div>
+    </section>
+
+    <form id="applicationForm">
+      <label for="age">Âge</label>
+      <input id="age" name="age" type="number" min="6" max="120" required />
+
+      <label for="minecraftPseudo">Pseudo Minecraft</label>
+      <input id="minecraftPseudo" name="minecraftPseudo" type="text" required />
+
+      <label for="discord">Discord</label>
+      <input id="discord" name="discord" type="text" required placeholder="Pseudo#1234" />
+
+      <label for="niveau">Niveau de jeu</label>
+      <select id="niveau" name="niveau" required>
+        <option value="">Choisis ton niveau</option>
+        <option value="Débutant">Débutant</option>
+        <option value="Intermédiaire">Intermédiaire</option>
+        <option value="Avancé">Avancé</option>
+        <option value="Expert">Expert</option>
+      </select>
+
+      <label for="dateDebut">Depuis quand tu joues à Minecraft ?</label>
+      <input id="dateDebut" name="dateDebut" type="month" required />
+
+      <label for="tempsJour">Temps moyen de jeu par jour</label>
+      <input id="tempsJour" name="tempsJour" type="text" placeholder="Ex : 2 heures" required />
+
+      <label for="tempsSemaine">Temps moyen de jeu par semaine</label>
+      <input id="tempsSemaine" name="tempsSemaine" type="text" placeholder="Ex : 14 heures" required />
+
+      <label for="interetServeur">Pourquoi veux-tu rejoindre le serveur ?</label>
+      <textarea id="interetServeur" name="interetServeur" rows="3" placeholder="Explique ton intérêt envers le serveur" required></textarea>
+
+      <label for="dejaServeurs">As-tu déjà joué sur des serveurs Minecraft ?</label>
+      <select id="dejaServeurs" name="dejaServeurs" required>
+        <option value="">Choisis une réponse</option>
+        <option value="Oui">Oui</option>
+        <option value="Non">Non</option>
+      </select>
+
+      <label for="typeServeur">Quel type de serveur tu préfères ?</label>
+      <select id="typeServeur" name="typeServeur" required>
+        <option value="">Choisis un type</option>
+        <option value="Survie">Survie</option>
+        <option value="Créatif">Créatif</option>
+        <option value="PVP">PVP</option>
+        <option value="Hardcore">Hardcore</option>
+        <option value="Semi-RP">Semi-RP</option>
+      </select>
+
+      <label for="message">Message supplémentaire</label>
+      <textarea id="message" name="message" rows="4" placeholder="Pourquoi devrais-tu être choisi ?"></textarea>
+
+      <button type="submit">Envoyer la candidature</button>
+    </form>
+
+    <p class="info">Les fiches de candidature sont envoyées automatiquement lorsque tu appuies sur Envoyer.</p>
+    <div id="statusMessage" class="status"></div>
+  </main>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
